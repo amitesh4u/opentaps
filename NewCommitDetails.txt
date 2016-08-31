@@ -1,0 +1,85 @@
+commit d5f21bdb311b8013bfbe2ec84fdc89a355050c8a
+Author: Konstantin Rybalko <konstantin.rybalko@gmail.com>
+Date:   Wed Apr 9 15:48:55 2014 +0300
+
+    #4214 Fix missing shipping destination telephone numbers
+
+
+ opentaps/opentaps-common/src/common/org/opentaps/common/order/OrderEvents.java | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+commit ce590c03d617bc7e1f822aa2711a61780aa29cc6
+Author: Jeremy Wickersheimer <jwickers@gmail.com>
+Date:   Fri Nov 1 15:42:27 2013 +0800
+
+    #3936 Add missing commented CRM2 entries for the financials component
+
+ opentaps/financials/widget/financials/screens/common/PaymentScreens.xml   | 9 +++++++++
+ opentaps/financials/widget/financials/screens/invoices/InvoiceScreens.xml | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+
+commit 0c06aab812924ba3ed4c366b1074cf3f9b487560
+Author: Konstantin Rybalko <konstantin.rybalko@gmail.com>
+Date:   Wed Aug 21 18:39:36 2013 +0300
+
+    #3836 Add crm2 commented out widget on to  view sales and purchase orders, accounts, contacts, leads, suppliers pages
+
+ opentaps/crmsfa/webapp/crmsfa/orders/viewOrder.ftl                         |  4 +++-
+ opentaps/crmsfa/widget/crmsfa/screens/accounts/AccountsScreens.xml         | 10 +++++++++-
+ opentaps/crmsfa/widget/crmsfa/screens/contacts/ContactsScreens.xml         | 10 ++++++++++
+ opentaps/crmsfa/widget/crmsfa/screens/leads/LeadsScreens.xml               |  9 +++++++++
+ opentaps/crmsfa/widget/crmsfa/screens/orders/OrdersScreens.xml             |  4 ++++
+ opentaps/opentaps-common/webapp/common/WEB-INF/common-controller.xml       |  8 +++++++-
+ opentaps/purchasing/webapp/purchasing/order/viewOrder.ftl                  |  3 +++
+ opentaps/purchasing/widget/purchasing/screens/order/OrderScreens.xml       |  4 ++++
+ opentaps/purchasing/widget/purchasing/screens/supplier/SupplierScreens.xml |  9 +++++++++
+ 9 files changed, 58 insertions(+), 3 deletions(-)
+
+commit 4bf89bc18f2da571eb25f95079d6de5851399b04
+Author: oandreyev <oandreyev@opensourcestrategies.com>
+Date:   Fri Mar 29 06:46:59 2013 +0200
+
+    #3533 Run ECA crmsfa.updateActivityEmailsAssocs asynchronously.
+
+ opentaps/crmsfa/servicedef/secas_party.xml         | 4 ++--
+ opentaps/crmsfa/servicedef/services_activities.xml | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 04c2e7e2b67723608b7188719f730a362e72c794
+Author: Konstantin Rybalko <konstantin.rybalko@gmail.com>
+Date:   Thu Jan 31 21:52:44 2013 +0200
+
+    #3412 Fix price update of purchase orders
+
+ opentaps/purchasing/servicedef/services.xml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 90a805667aa61f85339d0e49b793a6a577496243
+Author: Konstantin Rybalko <konstantin.rybalko@gmail.com>
+Date:   Thu Jan 31 21:22:55 2013 +0200
+
+    #3410 For purchasing/updateOrderItems, use the same opentaps wrapper as in CRMSFA which properly cancel items qith qty = 0 and complete the order if there are no pending items
+
+ opentaps/purchasing/webapp/purchasing/WEB-INF/controller.xml | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 110e36dd5370723429b9f195c4ffb0f857b2fa48
+Author: Jeremy Wickersheimer <jwickers@gmail.com>
+Date:   Thu Nov 1 12:06:50 2012 +0800
+
+    #3238 Fix bug on the packing code preventing packing of items which reservation has non available quantity
+    
+         * reset the iterator before the second loop, else it can never be entered
+         * fix the check on quantityNotAvailable which must ignore == 0 instead of !=0 (which is what the first loop is already doing)
+
+ opentaps/warehouse/src/org/opentaps/warehouse/shipment/packing/PackingSession.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 16a1ed2bcc14e5fd03862cf3042663a5e3dbc317
+Author: Jeremy Wickersheimer <jwickers@gmail.com>
+Date:   Tue Jul 31 14:40:50 2012 +0800
+
+    #3017 Sanitize the given supplier ID to remove any special characters
+
+ opentaps/purchasing/src/org/opentaps/purchasing/supplier/SupplierServices.java | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
